@@ -1,0 +1,277 @@
+
+:root {
+	--clr-neon: rgba(235, 97, 143, 1);
+	--clr-bg: rgba(1, 1, 1, 1);
+	--clr-white: rgba(255, 255, 255, 1);
+}
+
+* {
+	box-sizing: border-box;
+	font-family: "Nunito", sans-serif;
+}
+
+html, body {
+	/*background: linear-gradient(rgb(73 69 107), rgb(97 92 136));*/
+	background: rgb(2,0,36);
+	background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+	background-attachment: fixed;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+.services {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 95%;
+	margin: 50px auto 20px auto;
+}
+.service {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 220px;
+	width: 340px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	transform-style: preserve-3d;
+	perspective: 700px;
+}
+
+.front {
+	position: absolute;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transform: rotateX(0deg);
+	transform-style: preserve-3d;
+	background-image: linear-gradient(45deg, rgb(58, 58, 58), rgb(22, 22, 22));
+	transition: 0.7s;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.back {
+	position: relative;
+	color: whitesmoke;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	transform: rotateX(-180deg);
+	background-image: linear-gradient(45deg, rgb(36, 36, 36), rgb(71, 71, 71));
+	transition: 0.7s;
+}
+
+.service:hover .back {
+	transform: rotateX(0deg);
+}
+
+.front h4 {
+	color: white;
+	font-size: 22px;
+	font-weight: 400;
+	transform: translateZ(50px);
+}
+.back h3 {
+	display: inline-block;
+	margin: 25px auto 10px auto;
+	transform: translateZ(50px);
+	color: rgb(116, 116, 116);
+}
+
+.back p {
+	margin: 0 40px;
+	transform: translateZ(50px);
+}
+
+.back button{
+	margin-top: 20px;
+}
+
+.service1 .front {
+	background: linear-gradient(45deg, rgb(91 108 196), rgb(139 175 217));
+}
+
+.service2 .front {
+	background: linear-gradient(45deg, rgb(244 165 192), rgb(143 87 177));
+}
+
+.service3 .front {
+	background: linear-gradient(45deg, rgb(203 106 153), rgb(217 181 134));
+}
+.service:hover .front {
+	transform: rotateX(180deg);
+}
+
+
+
+/*BUTTON*/
+button {
+  position: relative;
+  padding: 12px 35px;
+  background: #fec195;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #fec195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
+
+/*END BUTTON*/
