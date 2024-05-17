@@ -74,13 +74,26 @@ section{
   width: auto;
 }
 
-.animate.slideLeft1{
+.animate.slideLeft1 {
   transform: translateX(200%);
-}
-.animate.slideRight1{
-  transform: translateX(-200%);
+  transition: transform 1s;
 }
 
+.animate.slideRight1 {
+  transform: translateX(-200%);
+  transition: transform 1s;
+}
+
+.animate.slideLeft1.show-animation {
+  transform: translateX(0);
+}
+
+.animate.slideRight1.show-animation {
+  transform: translateX(0);
+}
+
+
+/*
 .animate.slideLeft1.show-animation{
   animation: slideLeft 1.75s forwards;
 }
@@ -93,6 +106,8 @@ section{
 .animate.slideRight1.hide-animation{
   animation: slideRightReverse 1.75s forwards;
 }
+
+*/
 
 @keyframes slideRight{
   0%{

@@ -6,8 +6,8 @@ function checkScroll() {
     const isInViewport = rect.top >= 0 && rect.top <= window.innerHeight;
 
     if (isInViewport) {
-      sec.classList.add('show-animation');
-      sec.classList.remove('hide-animation');
+        sec.classList.add('show-animation');
+        sec.classList.remove('hide-animation');
     } else {
       sec.classList.add('hide-animation');
       sec.classList.remove('show-animation');
