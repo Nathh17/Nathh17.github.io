@@ -1,3 +1,7 @@
+html, body {
+width: 100vw;
+}
+ 
  .u-section-1 {
   background-image: url("images/nn.jpg");
   background-position: 50% 50%;
@@ -68,8 +72,6 @@
 }
 
 /*ANIMATE SECTIONS*/
-
-
 
 .animate.slideLeft1 {
   transform: translateX(200%);
