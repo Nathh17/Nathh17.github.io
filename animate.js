@@ -3,7 +3,7 @@ let toAnimate = document.querySelectorAll('.animate');
 function checkScroll() {
   toAnimate.forEach((sec) => {
     const rect = sec.getBoundingClientRect();
-    const isInViewport = rect.top >= -527 && rect.top <= window.innerHeight;
+    const isInViewport = rect.top >= -700 && rect.top <= window.innerHeight;
 
     if (isInViewport) {
         sec.classList.add('show-animation');
