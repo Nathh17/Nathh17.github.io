@@ -69,10 +69,7 @@
 
 /*ANIMATE SECTIONS*/
 
-section{
-  height: 100vh;
-  width: auto;
-}
+
 
 .animate.slideLeft1 {
   transform: translateX(200%);
