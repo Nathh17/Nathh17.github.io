@@ -421,9 +421,12 @@ width: 100vw;
   .u-section-2 .u-text-7 {
     font-size: 1.875rem;
   }
-} .u-section-3 {
+} 
+
+.u-section-3 {
   background-image: url("images/image2.png");
   background-position: 50% 50%;
+  height: 100vh;
 }
 
 .u-section-3 .u-sheet-1 {
