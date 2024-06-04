@@ -62,20 +62,5 @@ function typingEffect(element, text, i = 0) {
 }
 
 function updateRegister() {
-  // Apriamo il file JSON
-  fetch('data/data.json')
-    .then(response => response.json())
-    .then(data => {
-      // Aggiorniamo il valore del counter per il nome corrente
-      if (currentName in data) {
-        data[currentName] += counterValue;
-      }
-      // Convertiamo l'oggetto JSON in una stringa
-      const jsonString = JSON.stringify(data);
-      // Creiamo un oggetto XMLHttpRequest per inviare la richiesta di update
-      const xhr = new XMLHttpRequest();
-      xhr.open('PUT', 'data/data.json', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.send(jsonString);
-    });
+
 }
