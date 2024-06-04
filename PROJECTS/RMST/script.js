@@ -20,7 +20,7 @@ increaseBtn.addEventListener('click', () => {
 let deletingText = false; // Flag per controllare se deleteText è in esecuzione
 
 // Load the JSON file
-fetch('data/data.json')
+fetch('https://api.jsonsilo.com/public/778d05f8-39f4-41bf-9a93-7bb384286bb3')
   .then(response => response.json())
   .then(data => {
     // Create a function to retrieve points based on name
@@ -62,5 +62,28 @@ function typingEffect(element, text, i = 0) {
 }
 
 function updateRegister() {
+  const url = 'https://api.jsonsilo.com/public/778d05f8-39f4-41bf-9a93-7bb384286bb3';
+  const headers = {
+    'Content-Type': 'application/json'
+  };
 
+  axios.get(url, { headers: headers })
+   .then(response => {
+      const data = response.data;
+      if (data[currentName]) {
+        data[currentName] += counterValue;
+      } else {
+        data[currentName] = counterValue;
+      }
+      axios.put(url, data, { headers: headers })
+       .then(response => {
+          console.log('Updated register:', response.data);
+        })
+       .catch(error => {
+          console.error('Error updating register:', error);
+        });
+    })
+   .catch(error => {
+      console.error('Error fetching register:', error);
+    });
 }
